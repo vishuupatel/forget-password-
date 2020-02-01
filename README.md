@@ -11,10 +11,6 @@ import com.bibinet.biunion.project.net.emit.PasswordForgetEmit;
 import com.bibinet.biunion.project.net.emit.PasswordUpdateEmit;
 import com.bibinet.biunion.project.net.ready.PasswordReady;
 
-/**
- * Created by bibinet on 2017-9-8.
- */
-
 public class PasswordFiring extends BaseFiring {
     private PasswordReady passwordReady;
     private PasswordUpdateEmit passwordUpdateEmit;
@@ -50,7 +46,7 @@ public class PasswordFiring extends BaseFiring {
             protected void onRequestFail(String resMessage) {
 
             }
-        });
+        }
     }
 
     public void setPasswordUpdate(String cellphone, String newPassword, String smsCode) {
@@ -68,7 +64,7 @@ public class PasswordFiring extends BaseFiring {
                 waitDialog.close();
             }
 
-        });
+        }
     }
 
     public void getPasswordForgetCode(String cellPhone) {
@@ -82,7 +78,7 @@ public class PasswordFiring extends BaseFiring {
             protected void onRequestFail(String resMessage) {
 
             }
-        });
+        }
     }
 
     public void checkPasswordForgetCode(String cellPhone, String smsCode) {
@@ -100,7 +96,7 @@ public class PasswordFiring extends BaseFiring {
                 waitDialog.close();
             }
 
-        });
+        }
     }
 
     public void setPasswordForget(String cellphone, String newPassword) {
@@ -114,7 +110,6 @@ public class PasswordFiring extends BaseFiring {
             protected void onRequestSuccess(BaseModel model) {
                 passwordForgetConfirmEmit.onSetPasswordForgetSuccess(model);
             }
-
-        });
+        }
     }
 }
